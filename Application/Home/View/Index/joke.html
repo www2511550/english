@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>joke</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		ul{margin: 0 auto;}
+		li{list-style: none;float: left;margin-right: 20px;}
+	</style>
+</head>
+<body>
+
+
+	<ul>
+		<volist name='data' id='vo'>
+			<li>
+				<a href=""><img src="{$vo->img}"></a>
+				<p>{$vo->title}</p>
+			</li>
+		</volist>	
+	</ul>
+
+</body>
+</html>

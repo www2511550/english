@@ -1,0 +1,42 @@
+<?php if (!defined('THINK_PATH')) exit();?>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content=""/>
+<meta name="copyright" content="baguawu.com"/>
+<meta name="og:description" content=""/>
+<meta name="og:image" content=""/>
+<link rel="stylesheet" type="text/css" href="/english/Public/css/style.css">
+</head>
+<body>
+
+<p class="top_img"><img src="/english/Public/images/1.jpg"/></p>
+<h2 class="title">国外暖心广告片《把眼泪变成微笑》<br/> This Russian Girl Takes The Riskiest Selfies Ever (Don’t Try This Yourself) </h2>
+<div class="art-intro" style="margin-bottom:18px;line-height:1.5">
+	<span>没有不能原谅的错误，也没有不肯愈合的伤口,也没有不肯愈合的伤口<br/>Meet Angela Nikolau - a Russian self-taught photographer who takes the most dangerous selfies ever.</span>
+</div>
+
+<div class="content_out">
+	<p>
+		<span class="p_span span_left">
+			这则暖心的小广告来自德国一家止血绷带品牌（Hansaplast），以一种温馨的方式告诉人们，就算会留下伤痕,也没有不愈合的伤口。游戏是孩子成长过程中扮演着不可缺少的角色，但再嬉戏的过程中难免会因为磕碰摔倒而意外受伤，于是品牌方在户外游乐场和孩子们玩了一次有趣的互动，将孩子的眼泪混合颜料进行创作，看着自己的“英勇事迹”被绘成一幅幅具有纪念意义的可爱水彩画，最终都破涕为笑。
+			<br/><br/>
+			成长难免有创伤，什么样的魔法能够让人将哭脸变成笑颜？Hansaplast并没有直接说自己能够“有效帮助物理伤口的愈合”，而是转变思维方式，聚焦到每个人在童年，少年时代都曾经经历过的生活片段，通过“将眼泪变成微笑”来传递自己的品牌理念，这样会让消费者感到，Hansaplast是自己的朋友，是伴随自己成长的朋友。
+		</span>
+		<span class="p_span span_right">
+			Meet Angela Nikolau - a Russian self-taught photographer who takes the most dangerous selfies ever.Meet Angela Nikolau - a Russian self-taught photographer who takes the most dangerous selfies ever.Meet Angela Nikolau - a Russian self-taught photographer who takes the most dangerous selfies ever.Meet Angela Nikolau - a Russian self-taught photographer who takes the most dangerous selfies ever.Meet Angela Nikolau - a Russian self-taught photographer who takes the most dangerous selfies ever.Meet Angela Nikolau - a Russian self-taught photographer who takes the most dangerous selfies ever.Meet Angela Nikolau - a Russian self-taught photographer who takes the most dangerous selfies ever.
+		</span>
+	</p>
+	<p></p>
+
+</div>
+
+<!-- 相关推荐 -->
+<h2 class="itemz_title" style="margin-bottom:10px;margin-top:20px;">相关推荐</h2>
+
+
+</body>
+</html>
