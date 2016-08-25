@@ -24,14 +24,12 @@
 <!-- 图片列表 -->
 <div class="photo_list_out"> 
 	<ul class="photo_list">
-		<li>
-			<a href="<?php echo U('index/detail');?>"><img src="/english/Public/images/1.jpg" /></a>
+
+	<?php if(is_array($imgArr)): $i = 0; $__LIST__ = $imgArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+			<a href="<?php echo U('index/detail',array('aid'=>$vo['id']));?>"><img src="/english/Public/images/1.jpg" /></a>
 			<p>执着骑手的肆意人生《家之所在》执着骑手的肆意人生《家之所在》执着骑手的肆意人生《家之所在》</p>
-		</li>
-		<li>
-			<a href=""><img src="/english/Public/images/2.jpg" /></a>
-			<p>执着骑手的肆意人生《家之所在》</p>
-		</li>
+		</li><?php endforeach; endif; else: echo "" ;endif; ?>
+
 	</ul>
 </div>	
 

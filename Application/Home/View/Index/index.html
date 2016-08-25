@@ -12,14 +12,14 @@
 <!-- 图片列表 -->
 <div class="photo_list_out"> 
 	<ul class="photo_list">
+
+	<volist name="imgArr" id="vo">	
 		<li>
-			<a href="{:U('index/detail')}"><img src="__PUBLIC__/images/1.jpg" /></a>
+			<a href="{:U('index/detail',array('aid'=>$vo['id']))}"><img src="__PUBLIC__/images/1.jpg" /></a>
 			<p>执着骑手的肆意人生《家之所在》执着骑手的肆意人生《家之所在》执着骑手的肆意人生《家之所在》</p>
 		</li>
-		<li>
-			<a href=""><img src="__PUBLIC__/images/2.jpg" /></a>
-			<p>执着骑手的肆意人生《家之所在》</p>
-		</li>
+	</volist>
+
 	</ul>
 </div>	
 

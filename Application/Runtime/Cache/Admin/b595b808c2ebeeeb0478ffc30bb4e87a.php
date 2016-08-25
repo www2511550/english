@@ -14,11 +14,21 @@
 </head>
 <body>
 
+
+<!-- 配置文件 -->
+<script type="text/javascript" src="/english/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/english/ueditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript"> 
+	var ue = UE.getEditor('container');
+</script>
+
 <div class="box_out">
 
 <form method="post" action="" enctype="multipart/form-data">
 
-<table>
+<table style="margin:100px auto;">
 	<tr>
 		<td>封面图片</td>
 		<td><input  name="files" type="file" />  </td>
@@ -41,11 +51,20 @@
 	</tr>
 	<tr>
 		<td>中文内容</td>
-		<td><textarea class="form-control" rows="3" name="content"></textarea>  </td>
+		<td>
+			<!-- 加载编辑器的容器 -->
+			<script id="container" name="content" type="text/plain">
+			    中文内容
+			</script>
+		</td>
 	</tr>
 	<tr>
 		<td>英文内容</td>
-		<td><textarea class="form-control" rows="3" name="content_en"></textarea>   </td>
+		<td><!-- 加载编辑器的容器 -->
+			<script id="container" name="content" type="text/plain">
+			    英文内容
+			</script>
+		</td>
 	</tr>
 	<tr>
 		<td closapn="2"><input type="submit" value="提交"/></td>

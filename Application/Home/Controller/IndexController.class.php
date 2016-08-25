@@ -4,13 +4,20 @@ use Think\Controller;
 class IndexController extends Controller {
 	// 首页
     public function index(){
-
+    	$articleModel = M('article');
+    	$imgArr = $articleModel->where(array('status'=>1))->order('addtime desc')->select();
+    	$this->assign(array('imgArr'=>$imgArr));
     	$this->display();    
     }
 
     // 详情页面
     public function detail()
     {
+        $aid = I('aid',0,'intval');
+        !$aid && $this->error('参数异常！');
+        $record = M('article')->where(array('id'=>$aid))->find();
+        !$record && $this->error('此文章可能已下架！');
+        $this->assign(array('info'=>$record));
     	$this->display();
     }
 

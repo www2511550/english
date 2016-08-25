@@ -13,6 +13,13 @@
  * Think 系统函数库
  */
 
+
+/**
+ *  打印函数
+ */
+function p( $data = array() ){
+    echo "<pre>".print_r($data, true)."</pre>";
+}
 /**
  * 获取和设置配置参数 支持批量定义
  * @param string|array $name 配置变量

@@ -9,16 +9,19 @@ class IndexController extends Controller {
             $params = I('post.');
             !$_FILES['files']['tmp_name'] && $this->error('图片上传错误！');
             // 图片路径
-            $params['img_path'] = "Upload/cover/".date('Y-m-d')."/".time().".jpg";
-            $params['min_img_path'] = "Upload/cover/thumb".date('Y-m-d')."/".time()."_600x500.jpg";
-            !is_dir($des_path) && mkdir($$params['img_path'],true,0777);
-            !is_dir($min_img_path) && mkdir($params['min_img_path'],true,0777);
+            $_img_path = "Upload/cover/".date('Y-m-d');
+            $params['img_path'] = $_img_path."/src_".time().".jpg";
+            $_min_img_path = "Upload/cover/thumb/".date('Y-m-d');
+            $params['min_img_path'] = $_min_img_path."/".time()."_600x500.jpg";
+            !is_dir($_img_path) && mkdir($_img_path,true,0777);
+            !is_dir($_min_img_path) && mkdir($_min_img_path,true,0777);
             $image = new \Think\Image();
-            $image->open($_FILES['files']['tmp_name']);
+            @$image->open($_FILES['files']['tmp_name']);
             // 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb.jpg 
-            $image->thumb(600, 500)->save($$params['min_img_path']);
-            $image->save($$params['img_path']);
-            D('Article')->addOne($params) ? $this->success('success!') : $this->error('failed!');
+            $image->thumb(600, 400)->save($params['min_img_path']);
+            move_uploaded_file($_FILES['files']['tmp_name'], $params['img_path']);
+            $status = D('Article')->addOne($params);
+            $status ? $this->success('success!') : $this->error('failed!');
         }	
     }
     /**
