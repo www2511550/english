@@ -15,8 +15,8 @@
 
 	<volist name="imgArr" id="vo">	
 		<li>
-			<a href="{:U('index/detail',array('aid'=>$vo['id']))}"><img src="__PUBLIC__/images/1.jpg" /></a>
-			<p>执着骑手的肆意人生《家之所在》执着骑手的肆意人生《家之所在》执着骑手的肆意人生《家之所在》</p>
+			<a style="width:100%" href="{:U('index/detail',array('aid'=>$vo['id']))}"><img style="width:100%" src="{$vo.img_path}" /></a>
+			<p>{$vo.title}</p>
 		</li>
 	</volist>
 

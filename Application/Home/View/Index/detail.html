@@ -9,12 +9,17 @@
 
 <div class="content_out">
 	<p>
-		<span class="p_span span_left">
+	<if condition="$info['content']"	>
+		<span class="span_left <if condition="$info['content_en']">p_span </if>">
 			{$info.content}
 		</span>
-		<span class="p_span span_right">
+	</if>
+		
+	<if condition="$info['content_en']"	>
+		<span class="span_right <if condition="$info['content']">p_span </if>">
 			{$info.content_en}
 		</span>
+	</if>
 	</p>
 	<p></p>
 

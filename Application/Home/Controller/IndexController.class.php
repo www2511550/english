@@ -7,6 +7,7 @@ class IndexController extends Controller {
     	$articleModel = M('article');
     	$imgArr = $articleModel->where(array('status'=>1))->order('addtime desc')->select();
     	$this->assign(array('imgArr'=>$imgArr));
+//     	p($imgArr);die;
     	$this->display();    
     }
 
