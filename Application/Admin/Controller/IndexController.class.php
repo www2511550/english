@@ -4,9 +4,12 @@ use Think\Controller;
 class IndexController extends Controller {
     public function index(){
         if (!IS_POST) {
+            $cateData = M('category')->where(array('status'=>1))->order('id asc')->select();
+            $this->assign(array('cateData'=>$cateData));
             $this->display();
         }else{
             $params = I('post.');
+//             p($params);die;
             !$_FILES['files']['tmp_name'] && $this->error('图片上传错误！');
             // 图片路径
             $_img_path = "Upload/cover/".date('Y-m-d');
@@ -20,9 +23,25 @@ class IndexController extends Controller {
             // 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb.jpg 
             $image->thumb(600, 400)->save($params['min_img_path']);
             move_uploaded_file($_FILES['files']['tmp_name'], $params['img_path']);
-            $status = D('Article')->addOne($params);
+            $status = D('Article')->addOne($params);  // 新增字段删除缓存文件
             $status ? $this->success('success!') : $this->error('failed!');
         }	
+    }
+    /**
+     * 添加分类
+     */
+    public function addCate(){
+        if ( !IS_POST ){
+            $this->display();
+        }else{
+            $params = I('post.');
+            !$params['cate_name'] || !$params['cate_name_en'] && $this->error('名称不能为空！');
+            $params['addtime'] = time();
+            $cateModel = M('category');
+            $map = "cate_name ='".$params['cate_name']."' OR cate_name= '".$params['cate_name_en']."'";
+            $cateModel->where($map)->find() && $this->error('已添加过的分类，请勿重复添加！');
+            $cateModel->add($params) ? $this->success('success！') : $this->error('failed!');
+        }
     }
     /**
      * 載入Excel工具类，excel的导入

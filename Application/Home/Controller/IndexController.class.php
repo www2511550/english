@@ -2,12 +2,17 @@
 namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
+    public function __construct(){
+        parent::__construct();
+        // 获取分类
+        $cateData = M('category')->where(array('status'=>1))->order('id asc')->select();
+        $this->assign('cateData', $cateData);
+    }
 	// 首页
     public function index(){
-    	$articleModel = M('article');
-    	$imgArr = $articleModel->where(array('status'=>1))->order('addtime desc')->select();
-    	$this->assign(array('imgArr'=>$imgArr));
-//     	p($imgArr);die;
+    	$cid = I('cid',1,'intval');
+    	$imgArr = M('article')->where(array('status'=>1,'cid'=>$cid))->order('addtime desc')->select();
+    	$this->assign(array('imgArr'=>$imgArr, 'cid'=>'1'));
     	$this->display();    
     }
 
@@ -16,9 +21,12 @@ class IndexController extends Controller {
     {
         $aid = I('aid',0,'intval');
         !$aid && $this->error('参数异常！');
-        $record = M('article')->where(array('id'=>$aid))->find();
+        $articleModel = M('article');
+        $record = $articleModel->where(array('id'=>$aid))->find();
         !$record && $this->error('此文章可能已下架！');
-        $this->assign(array('info'=>$record));
+        // 获取推荐文章
+        $recomData = $articleModel->where(array('status'=>1))->order('rand()')->limit('6')->select();
+        $this->assign(array('info'=>$record, 'recomData'=>$recomData));
     	$this->display();
     }
 

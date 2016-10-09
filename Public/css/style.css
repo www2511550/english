@@ -3,7 +3,6 @@ html{
 	font-family: "Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
 }
 a{text-decoration: none;}
-
 .head_out{
 	width: 100%;max-width: 768px;margin: 0 auto;height: 55px;background: #363946;color:#fff;line-height: 55px;
 }
@@ -40,7 +39,7 @@ a.logo_word{
     overflow-x: scroll;
 }
 .responsive-sub-menu>a{
-    display: inline-block;width: 25%;font-size: 13px;text-align: center;line-height: 49px;color:#9799a2;text-decoration: none;
+    display: inline-block;padding:0 14px;;font-size: 13px;text-align: center;line-height: 49px;color:#9799a2;text-decoration: none;
 }
 .responsive-sub-menu>a.a_cur{
     color: #fff;border-bottom: #fff;
@@ -128,24 +127,16 @@ a.more{
     font-size: 0.97em;
     color: #333;
 }
-.content_out>p{
+.content{
+    margin: 0 auto;
+    max-width: 768px;
 	display: block;
     margin-bottom: 20px;
     text-align: left!important;
     font-size: 0.95em;
     margin-top: 20px;
     height: auto;
-}
-.itemz_title{
-	font-size: 1.375em;
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    border-bottom: 1px solid #d3d3d3;
-    padding-bottom: 0.5em;
-    line-height: 1.1em;
-    margin: 10px;
+    text-align: center;
 }
 .p_span{
     width: 49%;height: auto;float: left;display: inline-block;
@@ -157,6 +148,39 @@ a.more{
     padding-left:1.5%;border-left:1px solid #dedede;line-height:1.5;
 }
 
+/*detail-recommend*/
+.recommend_out{
+    width: 96%;padding: 2%;padding-bottom: 10%;height: auto;background: #f0f0f0;float: left;
+}
+.recommend{
+    max-width: 768px;margin:  0 auto;
+}
+.itemz_title{
+    font-size: 1.375em;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 0.5em;
+    line-height: 1.1em;
+    margin: 10px;
+}
+.a_recom{
+    display: inline-block;width: 47%;height: auto;background: #fff;float: left;margin-left: 2%;position: relative;margin-bottom: 3%;
+}
+.a_recom>img{
+    width: 100%;height: 20%;border-radius:3px 3px 0 0;
+}
+.a_recom .title_recom{
+    font-size: 14px;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 25px;
+    text-transform: capitalize;
+    padding: 5px 8px;
+    color: #222;
+}
 
 
 
